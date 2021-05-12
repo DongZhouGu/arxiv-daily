@@ -4,7 +4,6 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
-
 # The repository to add this issue to
 REPO_OWNER = 'DongZhouGu'
 REPO_NAME = 'arxiv-daily'
@@ -13,4 +12,5 @@ REPO_NAME = 'arxiv-daily'
 NEW_SUB_URL = 'https://arxiv.org/list/cs/new'
 
 # Keywords to search
-KEYWORD_LIST = ["HOI", "human object interaction", "detection", "object detection", "transformer", "anchor free"]
+KEYWORD_LIST = ["human object interaction", "VCOCO", "HICO-DET", "","detection", "object detection", "transformer",
+                "anchor free", "scene understanding", "visual reasoning","visual relation detection"]
