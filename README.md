@@ -1,34 +1,27 @@
 # get-daily-arxiv-noti
 
-You can get daily arxiv notification with pre-defined keywords as [here](https://github.com/kobiso/daily-arxiv-noti/issues).
+This repository is build based on [here](github.com/kobiso/get-daily-arxiv-noti)
 
-Arxiv.org announces new submissions every day on fixed time as informed [here](https://arxiv.org/help/submit).
+Subject: computer science (cs)
+Keywords: "human object interaction", "visual relation detection", "object detection", "transformer","scene understanding", "visual reasoning"
 
-This repository makes it easy to filter papers and follow-up new papers which are in your interests by creating an issue in a github repository.
+## Usage( github actions)
 
+#### 1.Fork this Repo
 
-## Prerequisites
-- Python3.x
-
-Install requirements with below command.
-
-```bash
-$ pip install --upgrade pip
-$ pip install -r requirements.txt
-```
-
-## Usage
-
-#### 1. Create a Repo
-Create a repository to get notification in your github.
-
-#### 2. Set Config
-Revise `config.py` as your perferences.
+**Fork** this repo and **click "Settings"->"Secrets"->"New repository secret"** 
 
 ```python
+Name: GITHUB
 # Authentication for user filing issue (must have read/write access to repository to add issue to)
-USERNAME = 'changeme'
-TOKEN = 'changeme'
+Value: your_github_username,your_github_token
+```
+
+#### 2. Set Config
+
+**update`config.py` as your perferences.**
+
+```python
 
 # The repository to add this issue to
 REPO_OWNER = 'changeme'
@@ -41,12 +34,9 @@ NEW_SUB_URL = 'https://arxiv.org/list/cs/new'
 KEYWORD_LIST = ["changeme"]
 ```
 
-#### 3. Set Cronjob
-You need to set a cronjob to run the code everyday to get the daily notification.
+#### 3. Enable workflow
 
-Refer the [announcement schedule](https://arxiv.org/help/submit) in arxiv.org and set the cronjob as below.
+**click "Actions"->"Enable workflow"**
 
-```bash
-$ cronjob -e
-$ 0 2 * * mon-fri python PATH-TO-CODE/get-daily-arxiv-noti/main.py
-```
+To test the functionality, you can click " Run Workflow button" for an immediate run.
+
